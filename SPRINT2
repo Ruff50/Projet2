@@ -1,0 +1,47 @@
+MON PREMIER COMMIT : Votre mission si vous l'acceptez...
+
+
+
+"Maquetter votre application responsive :
+-        Créer le wireframe 
+-        Créer la maquette
+
+Intégrer la page au format HTML5 et CSS3 
+-        Structurer votre code grâce à une arborescence
+-        Avoir plusieurs fichier CSS 
+-        Site responsive mobile first
+
+Versionner votre code en local grâce à Git & GitHub
+Intégrer des fonctionnalités suivante : 
+
+Backend : 
+
+- login
+- Afficher les articles du plus récent au moins récent
+- Créer les articles
+- Désactivier les articles 
+
+*bonus : 
+- Lister les commentaires
+- Supprimer les commentaires
+- Option de tri d'affichage
+- Mettre une pagination pour les articles
+
+Frontend :
+
+- Afficher l'apercu des articles
+- Afficher le détail des articles
+*bonus :
+- Ajouter des commentaire à un article (pseudo+ texte)
+- Option de tri d'affichage
+- Mettre une pagination pour les articles
+
+Utiliser Git & Github
+**Pas de javascript"
+
+"- Maquetter une application niveau 3
+- Réaliser une interface utilisateur web statique et adaptable niveau 2
+- Développer une interface utilisateur web dynamique niveau 2
+- Développer la partie back-end d’une application web ou web mobile 2
+- Créer une base de données niveau 1
+"
