@@ -73,13 +73,13 @@
   <header class="topbar">
     <div class="margou">
       <div class="image">
-     <img width="120px" src="Images/margouilla.png" onmouseout="this.src='images/margouilla.png'; " onmouseover="this.src='images/Margouillat2.png'; " /> 
+      <img width="120px"  onmouseout="this.src='./images/margouilla.png'; " onmouseover="this.src='./images/margouilla2.png'; " src="./images/margouilla.png"/> 
     </div> 
   </div>    
       <nav class="topbar-nav">
       <a href="#"></a>
       <a href="#"></a>
-      <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour</a>
+      <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>"><img width="60px" src="./images/back_arrow.png" alt="retour"></a>
     </nav>
    
   </header>

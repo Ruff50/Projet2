@@ -73,7 +73,7 @@
   <header class="topbar">
     <div class="margou">
       <div class="image">
-     <img width="120px" src="Images/margouilla.png" onmouseout="this.src='images/margouilla.png'; " onmouseover="this.src='images/Margouillat2.png'; "/> 
+     <img width="120px"  onmouseout="this.src='./images/margouilla.png'; " onmouseover="this.src='./images/margouilla2.png'; " src="./images/margouilla.png"/> 
     </div> 
   </div>    
       <nav class="topbar-nav">
