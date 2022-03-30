@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style1.css">
   <title>MyBlogLite</title>
 </head>
 <body>
@@ -73,60 +73,54 @@
   <header class="topbar">
     <div class="margou">
       <div class="image">
-     <img width="120px" src="Images/margouilla.png" onmouseout="this.src='images/margouilla.png'; " onmouseover="this.src='images/Margouillat2.png'; "/> 
+     <img width="120px" src="Images/margouilla.png" onmouseout="this.src='images/margouilla.png'; " onmouseover="this.src='images/Margouillat2.png'; " /> 
     </div> 
   </div>    
       <nav class="topbar-nav">
-      <a href="#">Connexion</a>
-      <a href="#">Ajouter un article</a>
-      <a href="#">Désactiver un article</a>
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Retour</a>
     </nav>
    
   </header>
 
   <div class="container">
 
-    <div class="sidebar">
-      <div class="sidebar-item"><h1>Les Margouillats de <br> Saint-Pierre</h1></div>
-      </div>
+    
     <div class="main">
     <?php
 
 
-for ($i=0; $i<count( $post) ; $i++) {
+//for ($i=0; $i<count( $post) ; $i++) {
     ?>
         
         <div class="post">
             <div class="info-avatar">
-                <img src=<?php echo  $post[$i]["photo_avatar"]?> alt="pseudo" class="avatar">
+                <img src=<?php echo  $post[0]["photo_avatar"]?> alt="pseudo" class="avatar">
                 <div class="pseudo">
-                <p class="title"><?php echo  $post[$i]["title"]?></p>
-                    <p class="post-time"><?php echo  $post[$i]["post_time"]?></p>
+                <p class="title"><?php echo  $post[0]["title"]?></p>
+                    <p class="post-time"><?php echo  $post[0]["post_time"]?></p>
                 </div>
             </div>
             <div class="TitreArt">
-            <p class="titre"><a href=<?php echo  $post[$i]["lien"]?>><?php echo  $post[$i]["titreart"]?></a></p>
+            <p class="titre"><?php echo  $post[0]["titreart"]?></a></p>
             </div>
             <?php  
-            if( $post[$i]["image_article"] == '') 
+            if( $post[0]["image_article"] == '') 
             {
                 echo '<br>' ;
             }  else 
             { 
-                echo '<img src="'.  $post[$i]["image_article"].'" alt="post_img" class="post-img"> ';
+                echo '<img src="'.  $post[0]["image_article"].'" alt="post_img" class="post-img"> ';
             }
            ?>
 
-            <p class="post-text"><?php echo  $post[$i]["post_text"]?></p>
+            <p class="post-text"><?php echo  $post[0]["post_text"]?></p>
             <div class="social">
-                <p class="like"><span class="icon-thumbs-up-alt"></span><?php echo ' '.  $post[$i]["polike"]?></p>
-                <p class="comment"><span class="icon-comment-alt"></span><?php echo ' '. $post[$i]["comments"]?></p>
+                <p class="like"><span class="icon-thumbs-up-alt"></span><?php echo ' '.  $post[0]["polike"]?></p>
+                <p class="comment"><span class="icon-comment-alt"></span><?php echo ' '. $post[0]["comments"]?></p>
             </div>
         </div>
-        <?php  
-    }
-?>
-
         
     </div>
 
