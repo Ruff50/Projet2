@@ -28,7 +28,6 @@
   //Stocker les données
   while ($row = $result->fetch_assoc())
   {
-    
     $post [] = $row; 
   }
 
