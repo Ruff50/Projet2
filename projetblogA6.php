@@ -31,11 +31,11 @@
     $post [] = $row; 
   }
 
-  /*function my_var_dump($array, $name = 'var') {
+  function my_var_dump($array, $name = 'var') {
     highlight_string("<?php\n\$$name =\n" . var_export($array, true) . ";\n?>");
   }
   //my_var_dump($row, 'row');
-  //liberer l'space memoire*/
+  //liberer l'space memoire
   $result->free_result();
 
   //Fermer l'accès a la BDD
@@ -81,38 +81,44 @@
       <a href="#"></a>
       <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>"><img width="60px" src="./images/back_arrow.png" alt="retour"></a>
     </nav>
-    
+   
   </header>
 
   <div class="container">
 
     
     <div class="main">
+    <?php
+
+
+//for ($i=0; $i<count( $post) ; $i++) {
+    ?>
+        
         <div class="post">
             <div class="info-avatar">
-                <img src=<?php echo  $post[0]["photo_avatar"]?> alt="pseudo" class="avatar">
+                <img src=<?php echo  $post[5]["photo_avatar"]?> alt="pseudo" class="avatar">
                 <div class="pseudo">
-                <p class="title"><?php echo  $post[0]["title"]?></p>
-                    <p class="post-time"><?php echo  $post[0]["post_time"]?></p>
+                <p class="title"><?php echo  $post[5]["title"]?></p>
+                    <p class="post-time"><?php echo  $post[5]["post_time"]?></p>
                 </div>
             </div>
             <div class="TitreArt">
-            <p class="titre"><?php echo  $post[0]["titreart"]?></a></p>
+            <p class="titre"><?php echo  $post[5]["titreart"]?></a></p>
             </div>
             <?php  
-            if( $post[0]["image_article"] == '') 
+            if( $post[5]["image_article"] == '') 
             {
                 echo '<br>' ;
             }  else 
             { 
-                echo '<img src="'.  $post[0]["image_article"].'" alt="post_img" class="post-img"> ';
+                echo '<img src="'.  $post[5]["image_article"].'" alt="post_img" class="post-img"> ';
             }
            ?>
 
-            <p class="post-text"><?php echo  $post[0]["post_text"]?></p>
+            <p class="post-text"><?php echo  $post[5]["post_text"]?></p>
             <div class="social">
-                <p class="like"><span class="icon-thumbs-up-alt"></span><?php echo ' '.  $post[0]["polike"]?></p>
-                <p class="comment"><span class="icon-comment-alt"></span><?php echo ' '. $post[0]["comments"]?></p>
+                <p class="like"><span class="icon-thumbs-up-alt"></span><?php echo ' '.  $post[5]["polike"]?></p>
+                <p class="comment"><span class="icon-comment-alt"></span><?php echo ' '. $post[5]["comments"]?></p>
             </div>
         </div>
         
@@ -124,7 +130,6 @@
 
     </div>
   </div>
-   
-       
+  
 </body>
 </html>

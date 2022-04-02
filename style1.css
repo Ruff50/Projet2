@@ -20,9 +20,13 @@
             /*margin: 2px 1em 0 auto;
             */
 body {
+
+  /*  transform: scale(0.2);
+   transform-origin: 0 0;
+    add prefixed versions too.*/
   padding: 0;
   margin: 0;
-  background:url("https://images.pexels.com/photos/6976092/pexels-photo-6976092.jpeg");
+  background:url("./images/pexels_photo.jpg") ;
   background-size: cover;
   background-position: bottom;
   min-height: 100vh;

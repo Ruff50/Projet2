@@ -1,0 +1,89 @@
+body {
+    background:url("./images/pexel.jpg") ;
+  background-size: cover;
+  background-position:top;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+legend {
+    color: white;
+    background:black;
+
+}
+.affichage {
+display: flex;
+justify-content: space-between;
+flex-direction: column;
+align-items: center;
+}
+.avatar {
+    background: rgb(163, 160, 160) ;
+    width: 60%;
+    font-size: 26px;
+    padding: 50px;
+    margin: 2.5% 0% 0% 0%;
+}
+.affichage input {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.corppost{
+    background:rgb(163, 160, 160) ;
+    font-size: 26px;
+display:flex;
+flex-wrap: wrap;
+flex-direction: column;
+justify-content: center;
+align-items: center;   
+width: 63%;
+padding: 50px 30px;
+margin: 2.5% 0% 0 0;
+}
+.corppost input{
+    width: 100%;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.corppost textarea {
+    width: 100%;
+    font-size: 24px;
+    margin: 40px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+fieldset {
+    width:90%;
+}
+.date {
+    width: 60%;
+    height:70px;
+    margin: 1% 0% 0% 0%;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:20px 30px;
+}
+.Reseau {
+    background:rgb(163, 160, 160) ;
+}
+.Reseau input {
+    width: 35%;
+     font-size: 26px;
+     font-family: Arial, Helvetica, sans-serif;
+}
+.Reseau fieldset {
+    width: 70%;
+    background: #fff ;
+    margin:20px 0px 20px 100px;
+}
+.bouton input {
+        background: rgba(29, 27, 28, 0.6) ;
+        color:beige;
+        width: 500px;
+        padding: 50px 30px;
+        border-radius: 5px;
+        margin: 2.5% 0% 0 0;
+        font-size: 30px;
+        font-family: Arial, Helvetica, sans-serif;        
+    }
+
+    
