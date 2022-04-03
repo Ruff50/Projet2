@@ -116,8 +116,9 @@ a:hover {
   padding-top:30px;
 }
 .Nbart {
-  color:white;
-  background: #111;
+  color:black;
+  background: rgb(99, 237, 255);
+  text-align: center;
 }
 
 .main{
