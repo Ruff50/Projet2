@@ -26,26 +26,31 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-       
+ 
     echo "<p>Traitement du formulaire</p>";
     echo "<p>Merci pour votre article</p>";
 
 
        // var_dump($_POST);
 
-$mysqli = new mysqli("localhost", "root", "", "BLOG");
+$mysqli1 = new mysqli("localhost", "root", "", "BLOG");
 
-if ($mysqli->connect_errno) {
+if ($mysqli1->connect_errno) {
     echo "Problème de connexion à la base de données !";
     exit();
 }
 // nb de post
 $query="SELECT * FROM `Post` WHERE 1;";
-$result = $mysqli->query($query);
+$result = $mysqli1->query($query);
 $nbpost=$result->num_rows;   
 $result->free_result();
+$mysqli1->close();
 
-
+$mysqli2 = new mysqli("localhost", "root", "", "BLOG");
+if ($mysqli2->connect_errno) {
+  echo "Problème de connexion à la base de données !";
+  exit();
+}
 // Selectionner des données
 $requete_sql = "INSERT INTO `Post` ( `title`, `photo_avatar`, `post_time`,`image_article`,`titreart`, `polike`, `comments`,`lien`, `post_text`) 
 VALUES ( 
@@ -57,10 +62,15 @@ VALUES (
    '".$_POST['nolikes']."', 
    '".$_POST['nocom']."',
    './projetblogA".$nbpost.".php',  
-   '" . $_POST['post-text']  . "');";
-   
-$result = $mysqli->query($requete_sql);
-$mysqli->close();
+   '" . htmlentities( $_POST['post-text'])  . "');";
+
+
+ /*  var_dump($requete_sql)  ;*/
+$result1 = $mysqli2->query($requete_sql);
+if ($mysqli2->query($requete_sql)) {
+  printf("<p class='success'>Ajout du post effectué avec succès.</p><br />");
+  $mysqli2->close();
+}
 
 ?>
 </span></div>
