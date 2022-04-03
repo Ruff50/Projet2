@@ -68,7 +68,14 @@ function getAllPost($mysqli)
     $result->free_result();
     return $tabPosts;
 }
-
+function getnbPost($mysqli)
+{
+  $requete_sql = "SELECT * FROM `Post` WHERE 1;";
+    $result = $mysqli->query($requete_sql);
+    $nbpost=$result->num_rows;   
+    $result->free_result();
+    return $nbpost;
+}
   /*function my_var_dump($array, $name = 'var') {*/
  /*   highlight_string("<?php\n\$$name =\n" . var_export($array, true) . ";\n?>");*/
  /* }*/
@@ -104,7 +111,7 @@ function getAllPost($mysqli)
 //  $post []=$post1;
 //  $post []=$post2;
   //var_dump($post);
-  
+  $nba=getnbPost($mysqli); 
   ?>
 
 
@@ -128,10 +135,13 @@ function getAllPost($mysqli)
       <div class="sidebar-item"><h1>Les Margouillats de <br> Saint-Pierre</h1></div>
       </div>
     <div class="main">
-    <div class="Nbart"><h2>Liste des Articles</h2></div>
+    <div class="Nbart"><h2>Liste des
+ <?php echo $nba?> 
+     Articles</h2></div>
     <?php
 $post = getAllPost($mysqli);
-/*var_dump($post);*/
+
+/*var_dump($nba);*/
 
 for ($i=0; $i<count( $post) ; $i++) {
     ?>
@@ -143,7 +153,7 @@ for ($i=0; $i<count( $post) ; $i++) {
             if(is_null($post[$i]["cache"]) ) 
             {
               echo '<img src="'.  $post[$i]["image_article"].'" alt="post_img" class="post-img"> ';
-            }  else 
+            }  else  
             { 
                 echo '<img src="'.  $post[$i]["cache"].'" alt="cache" class="cache_img"> ';
             }

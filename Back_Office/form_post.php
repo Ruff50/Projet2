@@ -9,9 +9,24 @@
     <link rel="stylesheet" href="style_form.css">
 </head>
 <body>
+<header class="topbar">
+    <div class="margou">
+      <div class="image">
+      <img width="120px"  onmouseout="this.src='./images/margouilla.png'; " onmouseover="this.src='./images/margouilla2.png'; " src="./images/margouilla.png"/> 
+    </div> 
+  </div>    
+      <nav class="topbar-nav">
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>"><img width="60px" src="./images/back_arrow.png" alt="retour"></a>
+    </nav>
+    
+  </header>
+<div class="merci"><span id="merciok">
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+       
     echo "<p>Traitement du formulaire</p>";
     echo "<p>Merci pour votre article</p>";
 
@@ -24,9 +39,15 @@ if ($mysqli->connect_errno) {
     echo "Problème de connexion à la base de données !";
     exit();
 }
+// nb de post
+$query="SELECT * FROM `Post` WHERE 1;";
+$result = $mysqli->query($query);
+$nbpost=$result->num_rows;   
+$result->free_result();
+
 
 // Selectionner des données
-$requete_sql = "INSERT INTO `Post` ( `title`, `photo_avatar`, `post_time`,`image_article`,`titreart`, `polike`, `comments`, `post_text`) 
+$requete_sql = "INSERT INTO `Post` ( `title`, `photo_avatar`, `post_time`,`image_article`,`titreart`, `polike`, `comments`,`lien`, `post_text`) 
 VALUES ( 
     '".$_POST['pseudo']."', 
    './images/" . $_POST['avatar'] . "',
@@ -34,14 +55,15 @@ VALUES (
    './images/" . $_POST['post-img'] . "',
    '".$_POST['titre']."', 
    '".$_POST['nolikes']."', 
-   '".$_POST['nocom']."',  
+   '".$_POST['nocom']."',
+   './projetblogA".$nbpost.".php',  
    '" . $_POST['post-text']  . "');";
-
+   
 $result = $mysqli->query($requete_sql);
 $mysqli->close();
 
 ?>
-
+</span></div>
 <?php
 } else {
     ?>
@@ -55,7 +77,7 @@ $mysqli->close();
                 <p></p>
                 <label class="label-avatar" for="votre-avatar">
                 Votre avatar :
-                <input type="file" name="avatar" accept="image/png, image/jpg" required>
+                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" required>
                 </label>
         </fieldset>
         </span>
@@ -67,26 +89,22 @@ $mysqli->close();
             <p></p>
             <label class="label-image" for="votre-image">
             Votre image :
-            <input type="file" class="post-img" name="post-img" accept="image/png, image/jpg" required>
+            <input type="file" class="post-img" name="post-img" accept=".png, .jpg, .jpeg" required>
             </label>
         </fieldset>
         <fieldset>
         <legend>Date de l'article</legend>    
-        <input type="date" name="post-date" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" class="dateArt" required>
+        <input type="datetime-local" name="post-date" placeholder="D/M/Y h:m:s" value="" min="1997-01-01" max="2030-12-31" class="dateArt" required>
         </fieldset>
         </div> 
         <div class="Reseau">
         <fieldset>
         <legend>Réseau social</legend>    
-        <label class="label-like" for="nblikes">
-            Nombre de Likes :
+        <label class="label-like" for="nblikes">Nombre de Likes :</label>
         <input type="number" name="nolikes" placeholder="Nombre de likes" value="0" min="0" max="15000" id="likes">
-        </label>
         <p></p>
-        <label class="label-com" for="nbcoms">
-            Nombre de commentaires :
+        <label class="label-com" for="nbcoms">Nombre de commentaires :</label>
         <input type="number" name="nocom" placeholder="Nombre de commentaires" value="0" min="0" max="15000" id="comment">
-        </label>    
          </fieldset>
       
         </div>

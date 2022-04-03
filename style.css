@@ -136,12 +136,13 @@ a:hover {
   padding:20px 20px;
   text-align: justify;
   }
-.titre a {
-    text-decoration: none;
+.titre #under {
+  text-decoration: none;
 }
-.titre a :active {
+.titre #under.active,
+.titre #under:hover {
   text-decoration: underline;
-}
+} 
 .info-avatar {
   display: flex;
   flex-wrap: wrap;

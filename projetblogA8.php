@@ -96,29 +96,29 @@
         
         <div class="post">
             <div class="info-avatar">
-                <img src=<?php echo  $post[4]["photo_avatar"]?> alt="pseudo" class="avatar">
+                <img src=<?php echo  $post[8]["photo_avatar"]?> alt="pseudo" class="avatar">
                 <div class="pseudo">
-                <p class="title"><?php echo  $post[4]["title"]?></p>
-                    <p class="post-time"><?php echo  $post[4]["post_time"]?></p>
+                <p class="title"><?php echo  $post[8]["title"]?></p>
+                    <p class="post-time"><?php echo  $post[8]["post_time"]?></p>
                 </div>
             </div>
             <div class="TitreArt">
-            <p class="titre"><?php echo  $post[4]["titreart"]?></a></p>
+            <p class="titre"><?php echo  $post[8]["titreart"]?></a></p>
             </div>
             <?php  
-            if( $post[4]["image_article"] == '') 
+            if( $post[8]["image_article"] == '') 
             {
                 echo '<br>' ;
             }  else 
             { 
-                echo '<img src="'.  $post[4]["image_article"].'" alt="post_img" class="post-img"> ';
+                echo '<img src="'.  $post[8]["image_article"].'" alt="post_img" class="post-img"> ';
             }
            ?>
 
-            <p class="post-text"><?php echo  $post[4]["post_text"]?></p>
+            <p class="post-text"><?php echo  $post[8]["post_text"]?></p>
             <div class="social">
-                <p class="like"><span class="icon-thumbs-up-alt"></span><?php echo ' '.  $post[4]["polike"]?></p>
-                <p class="comment"><span class="icon-comment-alt"></span><?php echo ' '. $post[4]["comments"]?></p>
+                <p class="like"><span class="icon-thumbs-up-alt"></span><?php echo ' '.  $post[8]["polike"]?></p>
+                <p class="comment"><span class="icon-comment-alt"></span><?php echo ' '. $post[8]["comments"]?></p>
             </div>
         </div>
         

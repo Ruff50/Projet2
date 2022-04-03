@@ -22,7 +22,7 @@
   }
 
   // Selectionner des données
-  $requete_sql = "SELECT * FROM `Post` WHERE 1 ORDER BY post_time DESC;";
+  $requete_sql = "SELECT * FROM `Post` WHERE 1 ORDER BY post_time ASC;";
   $result = $mysqli->query($requete_sql);
 
   //Stocker les données
@@ -96,29 +96,29 @@
         
         <div class="post">
             <div class="info-avatar">
-                <img src=<?php echo  $post[5]["photo_avatar"]?> alt="pseudo" class="avatar">
+                <img src=<?php echo  $post[6]["photo_avatar"]?> alt="pseudo" class="avatar">
                 <div class="pseudo">
-                <p class="title"><?php echo  $post[5]["title"]?></p>
-                    <p class="post-time"><?php echo  $post[5]["post_time"]?></p>
+                <p class="title"><?php echo  $post[6]["title"]?></p>
+                    <p class="post-time"><?php echo  $post[6]["post_time"]?></p>
                 </div>
             </div>
             <div class="TitreArt">
-            <p class="titre"><?php echo  $post[5]["titreart"]?></a></p>
+            <p class="titre"><?php echo  $post[6]["titreart"]?></a></p>
             </div>
             <?php  
-            if( $post[5]["image_article"] == '') 
+            if( $post[6]["image_article"] == '') 
             {
                 echo '<br>' ;
             }  else 
             { 
-                echo '<img src="'.  $post[5]["image_article"].'" alt="post_img" class="post-img"> ';
+                echo '<img src="'.  $post[6]["image_article"].'" alt="post_img" class="post-img"> ';
             }
            ?>
 
-            <p class="post-text"><?php echo  $post[5]["post_text"]?></p>
+            <p class="post-text"><?php echo  $post[6]["post_text"]?></p>
             <div class="social">
-                <p class="like"><span class="icon-thumbs-up-alt"></span><?php echo ' '.  $post[5]["polike"]?></p>
-                <p class="comment"><span class="icon-comment-alt"></span><?php echo ' '. $post[5]["comments"]?></p>
+                <p class="like"><span class="icon-thumbs-up-alt"></span><?php echo ' '.  $post[6]["polike"]?></p>
+                <p class="comment"><span class="icon-comment-alt"></span><?php echo ' '. $post[6]["comments"]?></p>
             </div>
         </div>
         

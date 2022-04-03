@@ -23,7 +23,7 @@
   }
 
   // Selectionner des données
-  $requete_sql = "SELECT * FROM `Post` WHERE 1 ORDER BY post_time DESC;";
+  $requete_sql = "SELECT * FROM `Post` WHERE 1 ORDER BY post_time ASC;";
   $result = $mysqli->query($requete_sql);
 
   //Stocker les données
@@ -89,11 +89,11 @@
      <img width="120px"  onmouseout="this.src='./images/margouilla.png'; " onmouseover="this.src='./images/margouilla2.png'; " src="./images/margouilla.png"/> 
     </div> 
   </div>    
-      <nav class="topbar-nav">
+   <!--   <nav class="topbar-nav">
       <a href="#">Connexion</a>
       <a href="#">Ajouter un article</a>
       <a href="#">Désactiver un article</a>
-    </nav>
+    </nav> -->
    
   </header>
 
@@ -118,7 +118,7 @@ for ($i=0; $i<count( $post) ; $i++) {
                 </div>
             </div>
             <div class="TitreArt">
-            <p class="titre"><a href=<?php echo  $post[$i]["lien"]?>><?php echo  $post[$i]["titreart"]?></a></p>
+            <p class="titre"><a id="under" href=<?php echo  $post[$i]["lien"]?>><?php echo  $post[$i]["titreart"]?></a></p>
             </div>
             <?php  
             if( $post[$i]["image_article"] == '') 
