@@ -77,7 +77,7 @@ $mysqli->close();
                 <p></p>
                 <label class="label-avatar" for="votre-avatar">
                 Votre avatar :
-                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" required>
+                <input type="file" name="avatar" accept=".png" required>
                 </label>
         </fieldset>
         </span>
@@ -89,7 +89,7 @@ $mysqli->close();
             <p></p>
             <label class="label-image" for="votre-image">
             Votre image :
-            <input type="file" class="post-img" name="post-img" accept=".png, .jpg, .jpeg" required>
+            <input type="file" class="post-img" name="post-img" accept=".jpg, .jpeg" required>
             </label>
         </fieldset>
         <fieldset>

@@ -416,7 +416,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-gap: 80px;
+    grid-gap: 50px;
     width: 1473px;
     height : 982px;
   
@@ -435,7 +435,7 @@ a:hover {
     font-weight: 900;
     font-size:3.5em;
     padding: 80px 30px;
-    width: 500px;
+    width: 540px;
     grid-column: 1/2;
     grid-row: 1/2;
     
