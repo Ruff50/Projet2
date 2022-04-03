@@ -123,7 +123,7 @@ function getnbPost($mysqli)
   </div>    
       <nav class="topbar-nav">
       <a href="#">Connexion</a>
-      <a href="./Back_Office/form_post.php">Ajouter un article</a>
+      <a href="./form_post.php">Ajouter un article</a>
       <a href="#">Désactiver un article</a>
     </nav>
    
