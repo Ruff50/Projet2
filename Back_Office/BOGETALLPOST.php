@@ -13,10 +13,10 @@
 </head>
 <body>
   <?php 
-  $mysqli = new mysqli("localhost", "root", "", "BLOG");
+  $mysqli1 = new mysqli("localhost", "root", "", "margou");
 
 
-  if ($mysqli->connect_errno) {
+  if ($mysqli1->connect_errno) {
       echo "Problème de connexion à la base de données !";
       exit();
   }
@@ -42,11 +42,11 @@
  // 'comments' => $row['comments'],
 // ];  
 //}
-function getAllPost($mysqli)
+function getAllPost($mysqli1)
 {
     // Selectionner des données
     $requete_sql = "SELECT * FROM Post WHERE 1 ORDER BY post_time DESC;";
-    $result = $mysqli->query($requete_sql);
+    $result = $mysqli1->query($requete_sql);
 
     //Stocker les données
     while ($row = $result->fetch_assoc()) {
@@ -55,7 +55,6 @@ function getAllPost($mysqli)
             'photo_avatar' => $row['photo_avatar'],
             'post_time' => $row['post_time'],
             'titreart' =>$row['titreart'],
-            'lien' =>$row['lien'],
             'image_article' => $row['image_article'],
             'post_text' => $row['post_text'],
             'polike' => $row['polike'],
@@ -66,15 +65,18 @@ function getAllPost($mysqli)
 
     //liberer l'espace memo
     $result->free_result();
+       //Fermer l'accès a la BDD
+  $mysqli1->close();
     return $tabPosts;
 }
 function getnbPost($mysqli)
 {
-  $requete_sql = "SELECT * FROM `Post` WHERE 1;";
-    $result = $mysqli->query($requete_sql);
+  $requete = "SELECT * FROM `Post` WHERE 1;";
+    $result = $mysqli->query($requete);
     $nbpost=$result->num_rows;   
     $result->free_result();
-    return $nbpost;
+     return $nbpost;
+
 }
   /*function my_var_dump($array, $name = 'var') {*/
  /*   highlight_string("<?php\n\$$name =\n" . var_export($array, true) . ";\n?>");*/
@@ -111,7 +113,7 @@ function getnbPost($mysqli)
 //  $post []=$post1;
 //  $post []=$post2;
   //var_dump($post);
-  $nba=getnbPost($mysqli); 
+  $nba=getnbPost($mysqli1); 
   ?>
 
 
@@ -139,7 +141,7 @@ function getnbPost($mysqli)
  <?php echo $nba?> 
      Articles</h2></div>
     <?php
-$post = getAllPost($mysqli);
+$post = getAllPost($mysqli1);
 
 /*var_dump($nba);*/
 

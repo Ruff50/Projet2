@@ -14,7 +14,7 @@
 <body>
   
   <?php 
-  $mysqli = new mysqli("localhost", "root", "", "BLOG");
+  $mysqli = new mysqli("localhost", "root", "", "margou");
 
 
   if ($mysqli->connect_errno) {
@@ -118,7 +118,7 @@ for ($i=0; $i<count( $post) ; $i++) {
                 </div>
             </div>
             <div class="TitreArt">
-            <p class="titre"><a id="under" href=<?php echo  $post[$i]["lien"]?>><?php echo  $post[$i]["titreart"]?></a></p>
+            <p class="titre"><a id="under" href=<?php echo  './Article.php?id='.$post[$i]["id"]?>><?php echo  $post[$i]["titreart"]?></a></p>
             </div>
             <?php  
             if( $post[$i]["image_article"] == '') 
